@@ -22,64 +22,66 @@ function upNumber(element) {
     arrayContain();
     counter++;
 }
-
+function get(params) {
+    return params.forEach(element => element.disabled = true)
+}
+function getContainerStyle(height, leftMargin, whigth,topMargin = 0,deg = 0) {
+    return container.style = `background:red;color:red;position:absolute;font-size:1vw;
+                              height:${height};margin-left:${leftMargin};
+                              width:${whigth};margin-top:${topMargin};transform: rotate(${deg})`
+}
 function arrayContain() {
     let filterElemnts = Array.from(allBtn)
 
-    if (allBtn[0].innerHTML == "o" && allBtn[3].innerHTML == "o" && allBtn[6].innerHTML == "o") {
-        container.style = "background:red;width: 0.3vw;color:red;height:91vh; margin-left: 19.9vw;font-size:1vw;position:absolute;"   //!{ left colume }
-        filterElemnts.forEach(element => element.disabled = true)                                                                     //!{ left colume }
-    } if (allBtn[0].innerHTML == "x" && allBtn[3].innerHTML == "x" && allBtn[6].innerHTML == "x") {                                   //!{ left colume }
-        container.style = "background:red;width: 0.3vw;color:red;height:91vh; margin-left: 19.9vw;font-size:1vw;position:absolute;"   //!{ left colume }
-        filterElemnts.forEach(element => element.disabled = true)                                                                     //!{ left colume }
-
-    } if (allBtn[1].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[7].innerHTML == "o") {                                    //!{ center colume }
-        container.style = "background:red;width: 0.3vw;color:red;height:91vh; margin-left: 50.4vw;font-size:1vw;position:absolute;"    //!{ center colume }
-        filterElemnts.forEach(element => element.disabled = true)                                                                      //!{ center colume }
-    } if (allBtn[1].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[7].innerHTML == "x") {                                    //!{ center colume }
-        container.style = "background:red;width: 0.3vw;color:red;height:91vh; margin-left: 50.4vw;font-size:1vw;position:absolute;"    //!{ center colume }
-        filterElemnts.forEach(element => element.disabled = true)
-    } if (allBtn[2].innerHTML == "o" && allBtn[5].innerHTML == "o" && allBtn[8].innerHTML == "o") {                                    //!{ right colume }
-        container.style = "background:red;width: 0.3vw;color:red;height:91vh; margin-left: 80.9vw;font-size:1vw;position:absolute;"    //!{ right colume }
-        filterElemnts.forEach(element => element.disabled = true)                                                                      //!{ right colume }
-    } if (allBtn[2].innerHTML == "x" && allBtn[5].innerHTML == "x" && allBtn[8].innerHTML == "x") {                                    //!{ right colume }
-        container.style = "background:red;width: 0.3vw;color:red;height:91vh; margin-left: 80.9vw;font-size:1vw;position:absolute;"    //!{ right colume }              
-        filterElemnts.forEach(element => element.disabled = true)
+      if (allBtn[0].innerHTML == "o" && allBtn[3].innerHTML == "o" && allBtn[6].innerHTML == "o") {  //! coulme
+        get(filterElemnts);                                                                           
+        getContainerStyle("91vh", "19.9vw", " 0.3vw")
+    } if (allBtn[0].innerHTML == "x" && allBtn[3].innerHTML == "x" && allBtn[6].innerHTML == "x") { //! coulme
+        get(filterElemnts);                                                                          
+        getContainerStyle("91vh", "19.9vw", " 0.3vw")
+    } if (allBtn[1].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[7].innerHTML == "o") { //! coulme                                 
+        get(filterElemnts);                                                                           
+        getContainerStyle("91vh", "50.4vw", "0.3vw")
+    } if (allBtn[1].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[7].innerHTML == "x") { //! coulme                            
+        get(filterElemnts);
+        getContainerStyle("91vh", "50.4vw", " 0.3vw")
+    } if (allBtn[2].innerHTML == "o" && allBtn[5].innerHTML == "o" && allBtn[8].innerHTML == "o") { //! coulme
+        get(filterElemnts);                                                                              
+        getContainerStyle("91vh", "80.9vw", " 0.3vw")
+    } if (allBtn[2].innerHTML == "x" && allBtn[5].innerHTML == "x" && allBtn[8].innerHTML == "x") { //! coulme
+        get(filterElemnts);
+        getContainerStyle("91vh", "80.9vw", " 0.3vw")
+    } if (allBtn[0].innerHTML == "o" && allBtn[1].innerHTML == "o" && allBtn[2].innerHTML == "o") { //! row
+        get(filterElemnts);                                                                                       
+        getContainerStyle("0.5vh"," 5vw","91vw","15.9vh;")
+    } if (allBtn[0].innerHTML == "x" && allBtn[1].innerHTML == "x" && allBtn[2].innerHTML == "x") { //! row                                                   
+        get(filterElemnts);
+        getContainerStyle("0.5vh"," 5vw","91vw","15.9vh;")
+    } if (allBtn[3].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[5].innerHTML == "o") { //! row                                                 
+        get(filterElemnts);                                                                                      
+        getContainerStyle("0.5vh"," 5vw","91vw","46vh;")
+    } if (allBtn[3].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[5].innerHTML == "x") { //! row                                                 
+        get(filterElemnts);
+        getContainerStyle("0.5vh"," 5vw","91vw","46vh;")
+    } if (allBtn[6].innerHTML == "o" && allBtn[7].innerHTML == "o" && allBtn[8].innerHTML == "o") { //! row                                              
+        get(filterElemnts);                                                                                     
+        getContainerStyle("0.5vh"," 5vw","91vw","76vh;")
+    } if (allBtn[6].innerHTML == "x" && allBtn[7].innerHTML == "x" && allBtn[8].innerHTML == "x") { //! row   
+        get(filterElemnts);
+        getContainerStyle("0.5vh"," 5vw","91vw","76vh;")
+    } if (allBtn[0].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[8].innerHTML == "o") { //! slantLine                                              
+        get(filterElemnts);                                                                                       
+        getContainerStyle("0.5vh","3vw","95vw","45.5vh","24deg")
+    } if (allBtn[0].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[8].innerHTML == "x") { //! slantLine                                                  
+        get(filterElemnts);
+        getContainerStyle("0.5vh","3vw","95vw","45.5vh","24deg")
+    } if (allBtn[2].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[6].innerHTML == "o") { //! slantLine                                                    
+        get(filterElemnts);                                                                                       
+        getContainerStyle("0.5vh","3vw","95vw","45.5vh","-24deg")
+    } if (allBtn[2].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[6].innerHTML == "x") { //! slantLine                                                   
+        get(filterElemnts);
+        getContainerStyle("0.5vh","3vw","95vw","45.5vh","-24deg")
     }
-
-    if (allBtn[0].innerHTML == "o" && allBtn[1].innerHTML == "o" && allBtn[2].innerHTML == "o") {                                                       //!{ hight row }
-        container.style = "background:red;width: 91vw;color:red; height: 0.5vh; margin-left: 5vw;margin-top: 15.9vh; font-size:1vw;position:absolute;"  //!{ hight row }
-        filterElemnts.forEach(element => element.disabled = true)                                                                                       //!{ hight row }
-    } if (allBtn[0].innerHTML == "x" && allBtn[1].innerHTML == "x" && allBtn[2].innerHTML == "x") {                                                     //!{ hight row }
-        container.style = "background:red;width: 91vw;color:red; height: 0.5vh; margin-left: 5vw;margin-top: 15.9vh; font-size:1vw;position:absolute;"  //!{ hight row }              
-        filterElemnts.forEach(element => element.disabled = true)}
-    if (allBtn[3].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[5].innerHTML == "o") {                                                       //!{ middle row }
-        container.style = "background:red;width: 91vw;color:red; height: 0.5vh; margin-left: 5vw;margin-top: 46vh; font-size:1vw;position:absolute;"    //!{ middle row }
-        filterElemnts.forEach(element => element.disabled = true)                                                                                       //!{ middle row }
-    } if (allBtn[3].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[5].innerHTML == "x") {                                                     //!{ middle row }
-        container.style = "background:red;width: 91vw;color:red; height: 0.5vh; margin-left: 5vw;margin-top: 46vh; font-size:1vw;position:absolute;"    //!{ middle row }              
-        filterElemnts.forEach(element => element.disabled = true)}
-    if (allBtn[6].innerHTML == "o" && allBtn[7].innerHTML == "o" && allBtn[8].innerHTML == "o") {                                                       //!{ down row }
-        container.style = "background:red;width: 91vw;color:red; height: 0.5vh; margin-left: 5vw;margin-top: 76vh; font-size:1vw;position:absolute;"    //!{ down row }
-        filterElemnts.forEach(element => element.disabled = true)                                                                                       //!{ down row }
-    } if (allBtn[6].innerHTML == "x" && allBtn[7].innerHTML == "x" && allBtn[8].innerHTML == "x") {                                                     //!{ down row }
-        container.style = "background:red;width: 91vw;color:red; height: 0.5vh; margin-left: 5vw;margin-top: 76vh; font-size:1vw;position:absolute;"    //!{ down row }              
-        filterElemnts.forEach(element => element.disabled = true)
-    }
-
-    if (allBtn[0].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[8].innerHTML == "o") {                                                       //!{ hight row }
-        container.style = "background:red;width: 95vw;color:red; height: 0.5vh; margin-left: 3vw;margin-top: 45.5vh; font-size:1vw;position:absolute;transform: rotate(24deg);"  //!{ hight row }
-        filterElemnts.forEach(element => element.disabled = true)                                                                                       //!{ hight row }
-    } if (allBtn[0].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[8].innerHTML == "x") {                                                     //!{ hight row }
-        container.style = "background:red;width: 95vw;color:red; height: 0.5vh; margin-left: 3vw;margin-top: 45.5vh; font-size:1vw;position:absolute;transform: rotate(24deg);"  //!{ hight row }              
-        filterElemnts.forEach(element => element.disabled = true)}
-
-        if (allBtn[2].innerHTML == "o" && allBtn[4].innerHTML == "o" && allBtn[6].innerHTML == "o") {                                                       //!{ hight row }
-        container.style = "background:red;width: 95vw;color:red; height: 0.5vh; margin-left: 3vw;margin-top: 45.5vh; font-size:1vw;position:absolute;transform: rotate(-24deg);"  //!{ hight row }
-            filterElemnts.forEach(element => element.disabled = true)                                                                                       //!{ hight row }
-        } if (allBtn[2].innerHTML == "x" && allBtn[4].innerHTML == "x" && allBtn[6].innerHTML == "x") {                                                     //!{ hight row }
-        container.style = "background:red;width: 95vw;color:red; height: 0.5vh; margin-left: 3vw;margin-top: 45.5vh; font-size:1vw;position:absolute;transform: rotate(-24deg);"  //!{ hight row }              
-            filterElemnts.forEach(element => element.disabled = true)}
 
 }
 
