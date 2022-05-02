@@ -23,7 +23,7 @@ function initalizationPopUp() {
     border:2px solid black;
     opacity: 1;
     `
-    entrance.innerHTML = "<article id='warpBtns'><button onclick=chooseTypeGame('Yourself')>Against Yourself</button> <button onclick=chooseTypeGame('Computer')>Against Computer</button></article>"
+    entrance.innerHTML = "<article id='warpBtns'><button onclick=chooseTypeGame('Yourself')  class='btn'>Against Yourself</button> <button onclick=chooseTypeGame('Computer')  class='btn'>Against Computer</button></article>"
 }
 function chooseTypeGame(str) {
     if (str == "Yourself") {
@@ -62,7 +62,10 @@ function calculateBut() {
                 } else {
                     upNumber(element)
                     if (bool != true) {
+                        console.log(bool);
                         setTimeOutAuth(i) //! against computer
+                    }else{
+                        console.log(bool);
                     }
                 }
             }
@@ -96,6 +99,21 @@ function checkCurrentText() {
         stringData = "o"
     }
 }
+function restartGame() {
+    container_popUp.innerHTML = ' <i class="fa fa-mail-reply-all" id="icon" onclick="startAgain()" style="font-size:36px;position: absolute;"></i>'
+}
+function startAgain() {
+    for (let i = 0; i < allBtn.length; i++) {
+        allBtn[i].innerText = "";
+        allBtn[i].style = ""
+        allBtn[i].disabled = false;
+    }
+    bool = false
+    container.style = "";
+    counter = 0
+    existIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    calculateBut()
+}
 function arrayContain() {
     if (whichTypeGame == true) {
         checkCurrentText()
@@ -104,45 +122,53 @@ function arrayContain() {
         getElemnts(filterElemnts);
         getContainerStyle("91vh", "19.9vw", " 0.3vw")
         bool = true;
+        restartGame()
     }
     if (allBtn[1].innerHTML == stringData && allBtn[4].innerHTML == stringData && allBtn[7].innerHTML == stringData) { //! coulme        
         getElemnts(filterElemnts);
         getContainerStyle("91vh", "50.4vw", "0.3vw")
         bool = true;
+        restartGame()
     }
 
     if (allBtn[2].innerHTML == stringData && allBtn[5].innerHTML == stringData && allBtn[8].innerHTML == stringData) { //! coulme
         getElemnts(filterElemnts);
         getContainerStyle("91vh", "80.9vw", " 0.3vw")
         bool = true;
+        restartGame()
     }
 
     if (allBtn[0].innerHTML == stringData && allBtn[1].innerHTML == stringData && allBtn[2].innerHTML == stringData) { //! row
         getElemnts(filterElemnts);
         getContainerStyle("0.5vh", " 5vw", "91vw", "15.9vh;")
         bool = true;
+        restartGame()
     }
     if (allBtn[3].innerHTML == stringData && allBtn[4].innerHTML == stringData && allBtn[5].innerHTML == stringData) { //! row                                                 
         getElemnts(filterElemnts);
         getContainerStyle("0.5vh", " 5vw", "91vw", "46vh;")
         bool = true;
+        restartGame()
     }
 
     if (allBtn[6].innerHTML == stringData && allBtn[7].innerHTML == stringData && allBtn[8].innerHTML == stringData) { //! row   
         getElemnts(filterElemnts);
         getContainerStyle("0.5vh", " 5vw", "91vw", "76vh;")
         bool = true;
+        restartGame()
     }
 
     if (allBtn[0].innerHTML == stringData && allBtn[4].innerHTML == stringData && allBtn[8].innerHTML == stringData) { //! slantLine                                              
         getElemnts(filterElemnts);
-        getContainerStyle("0.5vh", "3vw", "95vw", "45.5vh", "24deg")
+        getContainerStyle("0.5vh", "3vw", "95vw", "45.5vh", "26deg")
         bool = true;
+        restartGame()
     }
     if (allBtn[2].innerHTML == stringData && allBtn[4].innerHTML == stringData && allBtn[6].innerHTML == stringData) { //! slantLine                                                    
         getElemnts(filterElemnts);
-        getContainerStyle("0.5vh", "3vw", "95vw", "45.5vh", "-24deg")
+        getContainerStyle("0.5vh", "3vw", "95vw", "45.5vh", "-26deg")
         bool = true;
+        restartGame()
     }
 }
 
@@ -160,6 +186,9 @@ function setTimeOutAuth(elment) {
                 arrayContain();
                 filterElemnts[randomNumber].disabled = true;
                 existIndex.splice(existIndex.indexOf(randomNumber), 1)
+                if (arrayXY.length == counter) {
+                    return false;
+                } 
                 counter++;
                 return;
             }

@@ -13,7 +13,7 @@
     height: 30vh;
     background: rgb(241, 240, 240);
     color: white;
-    font-size:50px
+    font-size:50px;
 }
 .game_btn:nth-child(1){
     border: none;
@@ -63,23 +63,13 @@
     background: white; 
     border-left: 2px solid black; 
 }
-/* #entrance{
-    width: 40vw;
-    height: 40vh;
-    background: white;
-    opacity: 0.8;
-    position: absolute;
-    margin-left: 30vw;
-    margin-top: 25vh;
-    border:2px solid black;
-} */
 #warpBtns{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
     margin-top: 20%;
 }
-button{
+.btn{
     margin: 2px;
     padding: 20px;
     border: 2px solid black;
