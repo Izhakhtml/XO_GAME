@@ -193,7 +193,7 @@ function setTimeOutAuth(elment) {
                 return;
             }
             if (2 > existIndex.length - 1) {
-                let lastNumber = existIndex[0]
+                let lastNumber = existIndex[Math.floor(Math.random()*existIndex.length)]
                 if (arrayXY.length == counter) {
                     return false;
                 } else {
